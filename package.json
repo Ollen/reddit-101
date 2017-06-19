@@ -1,0 +1,11 @@
+{
+  "name": "reddit-101",
+  "version": "1.0.0",
+  "description": "Reddit content fetcher",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "snoowrap": "^1.14.0"
+  }
+}
