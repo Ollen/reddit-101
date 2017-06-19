@@ -9,8 +9,44 @@ const client = new snoowrap(config.reddit);
  */
 client.getMe().getUpvotedContent({limit: 2})
     .then(res => {
-        console.log(res);
+        console.log('Upvoted Contents:');
+        for (let i = 0; i < res.length; i++) {
+            console.log(`${i + 1}. ${res[i].title}`);
+        }
     }, err => {
         console.log(err);
     });
 
+
+/**
+ * Gets a list of Controversial Post
+ */
+
+client.getControversial({time: 'week', limit: 5})
+    .then(res => {
+        console.log('Weekly controversial posts:');
+        for (let i = 0; i < res.length; i++) {
+            console.log(`${i + 1}. ${res[i].title}`);
+        }
+    }, err => console.log(err));
+
+/**
+ * Gets a list of Controversial Post on a specific subreddit.
+ */
+client.getControversial('jokes',{time: 'week', limit: 5})
+    .then(res => {
+        console.log('Jokes weekly controversial posts:');
+        for (let i = 0; i < res.length; i++) {
+            console.log(`${i + 1}. ${res[i].title}`);
+        }
+    }, err => console.log(err));
+
+
+/**
+ * Get a random submission in the 'Not the onion' subreddit
+ */
+client.getRandomSubmission('nottheonion')
+    .then(res => {
+        console.log('Random Not the Onion submission:');
+        console.log(res.title);
+    }, err => console.log(err));
