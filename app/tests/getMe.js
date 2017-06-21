@@ -50,3 +50,14 @@ client.getRandomSubmission('nottheonion')
         console.log('Random Not the Onion submission:');
         console.log(res.title);
     }, err => console.log(err));
+
+/**
+ * Get Me
+ */
+client.getControversial('creepy', {time: 'hour', limit: 1})
+    .then(res => {
+        console.log('## Creepy ##');
+        console.log(res);
+    }, err => {
+        console.log(err);
+    });
