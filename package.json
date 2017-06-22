@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^4.0.0",
+    "later": "^1.2.0",
     "snoowrap": "^1.14.0"
   }
 }
